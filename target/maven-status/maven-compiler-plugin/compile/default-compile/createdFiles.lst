@@ -1,0 +1,7 @@
+com\example\springboot\bean\User.class
+com\example\springboot\controller\TestController.class
+com\example\springboot\SpringbootApplication.class
+com\example\springboot\service\impl\UserServiceImpl.class
+com\example\springboot\mapper\UserMapper.class
+com\example\springboot\bean\Old.class
+com\example\springboot\service\UserService.class

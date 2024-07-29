@@ -1,6 +1,5 @@
 package com.example.springboot;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -13,17 +12,12 @@ import com.example.springboot.mapper.MapMapper;
 import com.example.springboot.mapper.NewMapper;
 import com.example.springboot.mapper.OldMapper;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.org.apache.bcel.internal.generic.NEW;
-import org.apache.ibatis.annotations.Mapper;
-import org.assertj.core.data.MapEntry;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import sun.reflect.generics.tree.VoidDescriptor;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.util.*;
 
 /**
@@ -46,6 +40,20 @@ public class MybatisPlusTest {
         List<Old> list = oldMapper.selectList(null);
         list.forEach(System.out::println);
     }
+
+    @Test
+    public void selectEntity(){
+        QueryWrapper<Old> query = new QueryWrapper<>();
+        query.ge("id",20);
+        List<Old> olds = oldMapper.selectList(query);
+        for (Old old : olds) {
+            System.out.println("olds = " + olds);
+        }
+
+
+    }
+
+
 
     @Test
     public void testInsert() {
@@ -206,5 +214,17 @@ public class MybatisPlusTest {
             System.out.println("程序异常!!!");
         }
 
+    }
+
+
+    @Test
+    public void selectWrapper(){
+        Page<Old> oldPage = new Page<>(0,2);
+        QueryWrapper<Old> queryWrapper = new QueryWrapper<>();
+        queryWrapper.gt("id",1) .like("code","202");
+        IPage<Old> oldIPage = oldMapper.selectPage(oldPage, queryWrapper);
+        for (Old record : oldIPage.getRecords()) {
+            System.out.println("record = " + record);
+        }
     }
 }

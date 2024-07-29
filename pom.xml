@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>springboot</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>Springboot-2024</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <name>springboot</name>
-    <description>springboot</description>
+    <description>Springboot</description>
     <url/>
     <licenses>
         <license/>
@@ -51,7 +51,11 @@
             <version>3.1.2</version><!-- 用版本 2.1.9 就不行，UserMapper里BaseMapper 爆红  -->
         </dependency>
 
-
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.7.4</version>
+        </dependency>
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
@@ -72,7 +76,9 @@
             <artifactId>mybatis-spring-boot-starter-test</artifactId>
             <version>2.2.2</version>
         </dependency>
+
     </dependencies>
+
 
     <repositories>
         <repository>

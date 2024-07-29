@@ -4,14 +4,12 @@ import lombok.Data;
 
 /**
  * @author cmsxyz@163.com
- * @date 2024-07-18 0:25
+ * @date 2024-07-22 0:14
  * @usage
  */
 @Data
-public class New {
-
+public class AllInfo {
     private Integer id;
     private String code;
     private String path;
-    private String address;
 }

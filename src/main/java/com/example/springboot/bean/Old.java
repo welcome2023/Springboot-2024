@@ -1,9 +1,5 @@
 package com.example.springboot.bean;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
 /**
@@ -14,7 +10,8 @@ import lombok.Data;
 @Data
 public class Old {
 
-    private int id;
+    private Integer id;
     private String code;
     private String path;
+    private String address;
 }

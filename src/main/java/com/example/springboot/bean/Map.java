@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 public class Map {
 
-    private int oldId;
+    private Integer oldId;
     private String oldCode;
     private int newId;
     private String newCode;
